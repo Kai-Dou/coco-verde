@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+
+  /* Paleta oficial — Coco Verde Direto do Nordeste */
+  --color-brand-primary: #2d8659;
+  --color-brand-light: #4a9d6f;
+  --color-brand-yellow: #f4d03f;
+  --color-brand-white: #ffffff;
+  --color-brand-dark: #1a4d2e;
+
+  --color-coco-950: #0f2419;
+  --color-coco-900: #1a4d2e;
+  --color-coco-800: #1f5c38;
+  --color-coco-700: #247a4a;
+  --color-coco-600: #2d8659;
+  --color-coco-500: #2d8659;
+  --color-coco-400: #4a9d6f;
+  --color-coco-300: #6bb589;
+  --color-coco-200: #a8d4bc;
+  --color-coco-100: #d4ede0;
+  --color-coco-50: #edf7f1;
+
+  --color-yellow-300: #f7dc6f;
+  --color-yellow-400: #f4d03f;
+  --color-yellow-500: #e6c235;
+  --color-yellow-600: #c9a820;
+
+  --color-cream-50: #ffffff;
+  --color-cream-100: #f8faf9;
+  --color-cream-200: #eef2ef;
+  --color-cream-300: #dde5df;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-coco-950);
+    color: var(--color-cream-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand-yellow) 35%, transparent);
+    color: var(--color-brand-dark);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-dark {
+    background: rgba(26, 77, 46, 0.72);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-brand-light) 0%, var(--color-brand-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-padding {
+    padding: clamp(2.5rem, 8vw, 8rem) clamp(1rem, 4vw, 3rem);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .section-padding {
+      padding-top: clamp(2.5rem, 6vw, 4rem);
+      padding-bottom: clamp(2.5rem, 6vw, 4rem);
+    }
+  }
+
+  .btn-primary {
+    background-color: var(--color-brand-primary);
+    color: var(--color-brand-white);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-brand-light);
+    box-shadow: 0 12px 32px rgba(45, 134, 89, 0.35);
+  }
+
+  .btn-yellow {
+    background-color: var(--color-brand-yellow);
+    color: var(--color-brand-dark);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .btn-yellow:hover {
+    background-color: var(--color-yellow-300);
+    box-shadow: 0 12px 32px rgba(244, 208, 63, 0.35);
+  }
+
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.35;
+  }
+}
