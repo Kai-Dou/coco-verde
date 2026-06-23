@@ -30,12 +30,19 @@ export function Hero() {
       className="relative flex min-h-[100dvh] min-h-[100svh] items-center justify-center overflow-hidden pt-[env(safe-area-inset-top)]"
     >
       <motion.div style={{ y: bgY, scale }} className="absolute inset-0">
-        <MutedVideo
-          src={videos.hero}
-          poster={farmImages.hero}
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-        />
+        {isMobile ? (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${farmImages.hero})` }}
+          />
+        ) : (
+          <MutedVideo
+            src={videos.hero}
+            poster={farmImages.hero}
+            className="absolute inset-0 h-full w-full object-cover"
+            eager
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-coco-950/88 via-coco-900/75 to-coco-950" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(45,134,89,0.12),transparent_60%)]" />
       </motion.div>

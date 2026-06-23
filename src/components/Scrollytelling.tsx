@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { scrollySteps } from "../data/content"
+import { scrollySteps, historiaIntro } from "../data/content"
 import { useIsMobile } from "../hooks/useMediaQuery"
 import { MutedVideo } from "./MutedVideo"
 
@@ -8,12 +8,12 @@ function StepMedia({
   media,
   gradient,
   alt,
-  lazy = false,
+  videoActive = true,
 }: {
   media: (typeof scrollySteps)[number]["media"]
   gradient: string
   alt: string
-  lazy?: boolean
+  videoActive?: boolean
 }) {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState(false)
@@ -26,7 +26,7 @@ function StepMedia({
         <MutedVideo
           src={media.src}
           poster={"poster" in media ? media.poster : undefined}
-          lazy={lazy}
+          active={videoActive}
           className="absolute inset-0 h-full w-full object-cover"
         />
       ) : !error ? (
@@ -93,8 +93,7 @@ export function Scrollytelling() {
             Da roça ao seu copo
           </h2>
           <p className="mx-auto mt-3 max-w-2xl px-2 text-sm text-white/60 sm:mt-4 sm:text-base">
-            Do coqueiral lá do Nordeste até a porta do seu estabelecimento — com jeito de
-            quem conhece cada palmeira.
+            {historiaIntro}
           </p>
         </motion.div>
       </div>
@@ -165,6 +164,7 @@ export function Scrollytelling() {
                     media={scrollySteps[activeStep].media}
                     gradient={scrollySteps[activeStep].fallbackGradient}
                     alt={scrollySteps[activeStep].title}
+                    videoActive
                   />
                 </motion.div>
               </AnimatePresence>
@@ -199,7 +199,7 @@ export function Scrollytelling() {
                 media={step.media}
                 gradient={step.fallbackGradient}
                 alt={step.title}
-                lazy
+                videoActive
               />
             </div>
             <div className="p-4 sm:p-6">

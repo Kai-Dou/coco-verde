@@ -1,56 +1,90 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 type MutedVideoProps = {
   src: string
   poster?: string
   className?: string
-  autoPlay?: boolean
-  lazy?: boolean
+  eager?: boolean
+  active?: boolean
 }
 
 export function MutedVideo({
   src,
   poster,
   className = "",
-  autoPlay = true,
-  lazy = false,
+  eager = false,
+  active = true,
 }: MutedVideoProps) {
   const ref = useRef<HTMLVideoElement>(null)
+  const [inView, setInView] = useState(eager)
+  const [srcAttached, setSrcAttached] = useState(false)
+
+  useEffect(() => {
+    if (eager) {
+      setInView(true)
+      return
+    }
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "60px", threshold: 0.12 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [eager])
+
+  const shouldLoad = eager || inView
+  const shouldPlay = active && shouldLoad && inView
+
+  useEffect(() => {
+    setSrcAttached(false)
+  }, [src])
 
   useEffect(() => {
     const video = ref.current
-    if (!video) return
+    if (!video || !shouldLoad) return
 
-    if (!lazy || autoPlay) {
-      video.play().catch(() => {})
-      return
+    if (!srcAttached) {
+      video.src = src
+      video.load()
+      setSrcAttached(true)
     }
+  }, [shouldLoad, src, srcAttached])
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {})
-        } else {
-          video.pause()
-        }
-      },
-      { threshold: 0.35 }
+  useEffect(() => {
+    const video = ref.current
+    if (!video || !srcAttached) return
+
+    if (shouldPlay) {
+      video.play().catch(() => {})
+    } else {
+      video.pause()
+    }
+  }, [shouldPlay, srcAttached])
+
+  if (!shouldLoad && poster) {
+    return (
+      <img
+        src={poster}
+        alt=""
+        aria-hidden
+        className={className}
+        loading="lazy"
+        decoding="async"
+      />
     )
-
-    observer.observe(video)
-    return () => observer.disconnect()
-  }, [lazy, autoPlay, src])
+  }
 
   return (
     <video
       ref={ref}
-      src={src}
       poster={poster}
       muted
       loop
       playsInline
-      autoPlay={autoPlay && !lazy}
-      preload={lazy ? "none" : "metadata"}
+      preload="none"
       aria-hidden
       className={className}
     />

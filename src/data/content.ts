@@ -47,6 +47,9 @@ export const navLinks = [
   { label: "Contato", href: "#contato" },
 ] as const
 
+export const historiaIntro =
+  "Do coqueiral lá do Nordeste até a porta do seu estabelecimento — com jeito de quem conhece cada coqueiral."
+
 export const scrollySteps = [
   {
     id: "origem",
@@ -63,7 +66,7 @@ export const scrollySteps = [
     step: "02",
     title: "Colheita no ponto",
     description:
-      "Cada coco é escolhido na hora — olho no olho, batida na casca, água no auge. Só o melhor vai pro saco de rede amarela.",
+      "Cada coco é escolhido na hora — olho no olho, batida na casca, água no auge. Só o melhor vai pro saco.",
     highlight: "Seleção na mão",
     media: { type: "video" as const, src: videos.colheita, poster: farmImages.colheita },
     fallbackGradient: "from-coco-700 to-coco-900",
@@ -83,7 +86,7 @@ export const scrollySteps = [
     step: "04",
     title: "Na porta do seu negócio",
     description:
-      "Abastecemos bar, restaurante, lanchonete e mercadinho — ou você passa aqui no depósito e leva geladinho pra casa.",
+      "Abastecemos bar, restaurante, lanchonete e mercadinho — ou você passa aqui no depósito e leva natural.",
     highlight: "Pra revender ou saborear",
     media: { type: "video" as const, src: videos.entrega, poster: asset("/products/coco-verde.png") },
     fallbackGradient: "from-yellow-500/20 to-coco-900",
@@ -121,7 +124,7 @@ export const aboutStats = [
   { value: "24h", label: "Chega rápido" },
   { value: "100%", label: "Natural" },
   { value: "🌴", label: "Direto do NE" },
-  { value: "5", label: "Produtos" },
+  { value: "15+", label: "Produtos" },
 ] as const
 
 export const products = [
@@ -129,7 +132,7 @@ export const products = [
     id: "coco-verde",
     name: "Coco Verde",
     description:
-      "O carro-chefe. Fresco, gelado e direto do Nordeste — no saco de rede amarela, pronto pro balcão ou pra geladeira de casa.",
+      "O carro-chefe. Fresco, gelado e direto do Nordeste — no saco, pronto pro balcão ou pra geladeira de casa.",
     image: asset("/products/coco-verde.png"),
     tag: "O mais pedido",
     gradient: "from-coco-600/40 to-coco-900/80",
@@ -160,8 +163,7 @@ export const products = [
     name: "Cocada Delícia do Vale",
     description:
       "Doce de coco artesanal, cremoso e tradicional. Um pedacinho do Nordeste no docinho.",
-    image: asset("/products/cocada-delicia-do-vale.jpg"),
-    imageFallback: asset("/products/cocada.jpg"),
+    image: asset("/products/cocada.jpg"),
     tag: "Artesanal",
     gradient: "from-cream-200/15 to-coco-900/80",
     featured: false,
@@ -176,13 +178,103 @@ export const products = [
     gradient: "from-coco-500/20 to-coco-900/80",
     featured: false,
   },
+  {
+    id: "bananinha-caipira",
+    name: "Bananinha Caipira",
+    description: "Doce de banana artesanal, sabor de roça. Perfeita pra acompanhar o café.",
+    image: asset("/products/bananinha-caipira.jpeg"),
+    tag: "Docinho",
+    gradient: "from-yellow-500/25 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "pacoca-vital",
+    name: "Paçoca Vital",
+    description: "Paçoca tradicional, crocante e saborosa. Um clássico nordestino.",
+    image: asset("/products/pacoca-vital.jpeg"),
+    tag: "Tradicional",
+    gradient: "from-amber-600/20 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "rapadura",
+    name: "Rapadura do Ceará",
+    description: "Doce de rapadura autêntico, direto do Ceará. Energia natural e sabor intenso.",
+    image: asset("/products/rapadura-ceara.jpeg"),
+    tag: "Nordestino",
+    gradient: "from-amber-700/25 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "refrigerantes",
+    name: "Refrigerantes",
+    description: "Linha de refrigerantes pra abastecer seu comércio. Variedade e praticidade.",
+    image: asset("/products/Refrigerantes.jpeg"),
+    tag: "Bebidas",
+    gradient: "from-coco-400/15 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "pitu",
+    name: "Pitú",
+    description: "Cachaça Pitú — marca nordestina de peso. Pra quem revende com qualidade.",
+    image: asset("/products/Pitu.jpeg"),
+    tag: "Cachaça",
+    gradient: "from-yellow-600/20 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "cachaca-canastra",
+    name: "Cachaça Canastra",
+    description: "Cachaça artesanal da região da Canastra. Sabor marcante e origem garantida.",
+    image: asset("/products/cachaça-canastra.jpeg"),
+    tag: "Artesanal",
+    gradient: "from-amber-500/20 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "pinga-alambique",
+    name: "Pinga de Alambique",
+    description: "Destilada no alambique, autêntica e encorpada. Tradição em cada gole.",
+    image: asset("/products/pinga-de-alambique.jpeg"),
+    tag: "Artesanal",
+    gradient: "from-amber-600/20 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "pingo-de-ouro",
+    name: "Pingo de Ouro",
+    description: "Cachaça selecionada, qualidade que o comerciante confia.",
+    image: asset("/products/pingo-de-ouro.jpeg"),
+    tag: "Cachaça",
+    gradient: "from-yellow-500/20 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "vinho-campino",
+    name: "Vinho Campino",
+    description: "Vinho Campino — opção versátil pro seu estabelecimento.",
+    image: asset("/products/vinho-campino.jpeg"),
+    tag: "Vinho",
+    gradient: "from-red-900/30 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "vinho-tomasi",
+    name: "Vinho Tomasi",
+    description: "Vinho Tomasi, qualidade e bom custo-benefício pra revenda.",
+    image: asset("/products/vinho-tomasi.jpeg"),
+    tag: "Vinho",
+    gradient: "from-red-900/25 to-coco-900/80",
+    featured: false,
+  },
 ] as const
 
 export const contactInfo = {
   location: {
     title: "Nosso depósito",
     description:
-      "Passa aqui em Jardim Eulina — conhece a equipe, experimenta o coco e leva o seu geladinho.",
+      "Passa aqui em Jardim Eulina — conhece a equipe, experimenta o coco e leva o seu natural.",
     address: brand.address,
     hours: "Seg a Sáb, 8h às 18h",
   },

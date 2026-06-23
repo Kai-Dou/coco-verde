@@ -4,14 +4,9 @@ import { products, brand, type Product } from "../data/content"
 import { fadeUp, staggerContainer, viewportOnce } from "../utils/animations"
 
 function ProductImage({ product }: { product: Product }) {
-  const [src, setSrc] = useState(product.image)
   const [failed, setFailed] = useState(false)
 
   const handleError = () => {
-    if ("imageFallback" in product && product.imageFallback && src !== product.imageFallback) {
-      setSrc(product.imageFallback)
-      return
-    }
     setFailed(true)
   }
 
@@ -27,7 +22,7 @@ function ProductImage({ product }: { product: Product }) {
 
   return (
     <img
-      src={src}
+      src={product.image}
       alt={product.name}
       loading="lazy"
       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 md:group-hover:scale-110"
@@ -124,7 +119,7 @@ export function Catalog() {
               variants={fadeUp}
               className="mx-auto mt-3 max-w-xl px-2 text-sm text-white/65 sm:mt-4 sm:text-base"
             >
-              Linha enxuta e selecionada — do coco gelado ao docinho. Chama no Zap ou no Direct.
+              Do coco gelado à bebida e docinho — linha completa pra revender ou saborear. Chama no Zap ou no Direct.
             </motion.p>
           </motion.div>
 
