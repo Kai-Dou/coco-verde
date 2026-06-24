@@ -14,7 +14,7 @@ export function Footer() {
               Garante teu estoque!
             </p>
             <p className="mt-1 text-sm font-medium text-coco-800/80">
-              Chama no Zap ou no Direct — a gente leva rapidinho
+              Chama no Zap ou no Direct. A gente leva rapidinho.
             </p>
           </div>
           <a

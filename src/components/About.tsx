@@ -14,7 +14,7 @@ const pillars = [
     icon: Truck,
     title: "Entrega rapidinha",
     description:
-      "Frota nossa, com logo na porta — chega em Campinas e redondezas em menos de 24 horas.",
+      "Frota nossa, com logo na porta. Chega em Campinas e redondezas em menos de 24 horas.",
   },
   {
     icon: Store,
@@ -60,12 +60,12 @@ export function About() {
               </motion.h2>
               <motion.p variants={fadeUp} className="mt-6 text-base leading-relaxed text-white/70">
                 A <strong className="text-white">{brand.name}</strong> traz o sabor da roça
-                nordestina até Campinas. Coco gelado, água de coco, suco e doces — tudo com
+                nordestina até Campinas. Coco gelado, água de coco, suco e doces, tudo com
                 frescor de quem colheu ontem.
               </motion.p>
               <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-white/70">
                 Enquanto uns ficam só na promessa, a gente entrega. Chama no Zap, manda no
-                Direct — a gente resolve.
+                Direct. A gente resolve.
               </motion.p>
 
               <motion.div

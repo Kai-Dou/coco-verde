@@ -74,7 +74,7 @@ export function Hero() {
           className="mb-4 inline-flex max-w-[90vw] items-center gap-2 rounded-full glass px-3 py-1.5 text-xs text-coco-200 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm"
         >
           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-yellow-400 animate-pulse" />
-          🌴 Campinas, SP — {brand.tagline}
+          🌴 Campinas, SP · {brand.tagline}
         </motion.div>
 
         <motion.h1

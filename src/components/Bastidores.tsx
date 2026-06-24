@@ -28,7 +28,7 @@ export function Bastidores() {
               Vê como é na prática
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-3 max-w-lg text-sm text-white/60">
-              Da colheita na roça até a entrega — sem filtro, do jeito que a gente trabalha.
+              Da colheita na roça até a entrega, sem filtro, do jeito que a gente trabalha.
             </motion.p>
           </motion.div>
 

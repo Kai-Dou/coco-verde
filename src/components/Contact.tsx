@@ -30,7 +30,7 @@ export function Contact() {
               Bora conversar?
             </motion.h2>
             <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-lg text-white/65">
-              Pedido é pelo WhatsApp ou Direct do Instagram — a gente responde rápido, sem
+              Pedido é pelo WhatsApp ou Direct do Instagram. A gente responde rápido, sem
               burocracia.
             </motion.p>
           </motion.div>
@@ -66,7 +66,7 @@ export function Contact() {
               <span className="mb-3 text-3xl">🏪</span>
               <span className="font-display text-xl font-bold sm:text-2xl">Tenho um comércio</span>
               <span className="mt-2 text-sm text-white/70">
-                Bar, restaurante, mercadinho — fala com a gente
+                Bar, restaurante, mercadinho. Fala com a gente.
               </span>
             </motion.a>
           </motion.div>
@@ -82,7 +82,7 @@ export function Contact() {
           >
             <AtSign size={22} className="text-yellow-400" />
             <span className="font-semibold">{contactInfo.instagramHandle}</span>
-            <span className="text-sm text-white/50">— Direct aberto</span>
+            <span className="text-sm text-white/50">· Direct aberto</span>
           </motion.a>
 
           <motion.div

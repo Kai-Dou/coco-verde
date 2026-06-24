@@ -48,7 +48,7 @@ export const navLinks = [
 ] as const
 
 export const historiaIntro =
-  "Do coqueiral lá do Nordeste até a porta do seu estabelecimento — com jeito de quem conhece cada coqueiral."
+  "Do coqueiral lá do Nordeste até a porta do seu estabelecimento, com jeito de quem conhece cada coqueiral."
 
 export const scrollySteps = [
   {
@@ -56,7 +56,7 @@ export const scrollySteps = [
     step: "01",
     title: "Lá no coqueiral do Nordeste",
     description:
-      "Nosso coco nasce debaixo de sol forte e chuva de verão — cultivo natural, sem pressa, do jeito que a terra manda.",
+      "Nosso coco nasce debaixo de sol forte e chuva de verão, cultivo natural, sem pressa, do jeito que a terra manda.",
     highlight: "Direto da roça",
     media: { type: "image" as const, src: farmImages.plantacao },
     fallbackGradient: "from-coco-800 to-coco-950",
@@ -66,7 +66,7 @@ export const scrollySteps = [
     step: "02",
     title: "Colheita no ponto",
     description:
-      "Cada coco é escolhido na hora — olho no olho, batida na casca, água no auge. Só o melhor vai pro saco.",
+      "Cada coco é escolhido na hora, olho no olho, batida na casca, água no auge. Só o melhor vai pro saco.",
     highlight: "Seleção na mão",
     media: { type: "video" as const, src: videos.colheita, poster: farmImages.colheita },
     fallbackGradient: "from-coco-700 to-coco-900",
@@ -76,7 +76,7 @@ export const scrollySteps = [
     step: "03",
     title: "Na estrada até Campinas",
     description:
-      "Nossa frota sai carregada e chega rápido — coco gelado do jeito que você pediu, com cuidado de quem conhece o caminho.",
+      "Nossa frota sai carregada e chega rápido, com coco natural do jeito que você pediu e cuidado de quem conhece o caminho.",
     highlight: "Entrega em 24h",
     media: { type: "video" as const, src: videos.caminhao, poster: farmImages.coqueiral },
     fallbackGradient: "from-coco-600 to-coco-800",
@@ -86,7 +86,7 @@ export const scrollySteps = [
     step: "04",
     title: "Na porta do seu negócio",
     description:
-      "Abastecemos bar, restaurante, lanchonete e mercadinho — ou você passa aqui no depósito e leva natural.",
+      "Abastecemos bar, restaurante, lanchonete e mercadinho, ou você passa aqui no depósito e leva natural.",
     highlight: "Pra revender ou saborear",
     media: { type: "video" as const, src: videos.entrega, poster: asset("/products/coco-verde.png") },
     fallbackGradient: "from-yellow-500/20 to-coco-900",
@@ -124,7 +124,7 @@ export const aboutStats = [
   { value: "24h", label: "Chega rápido" },
   { value: "100%", label: "Natural" },
   { value: "🌴", label: "Direto do NE" },
-  { value: "15+", label: "Produtos" },
+  { value: "17+", label: "Produtos" },
 ] as const
 
 export const products = [
@@ -132,7 +132,7 @@ export const products = [
     id: "coco-verde",
     name: "Coco Verde",
     description:
-      "O carro-chefe. Fresco, gelado e direto do Nordeste — no saco, pronto pro balcão ou pra geladeira de casa.",
+      "O carro-chefe. Fresco, gelado e direto do Nordeste, no saco, pronto pro balcão ou pra geladeira de casa.",
     image: asset("/products/coco-verde.png"),
     tag: "O mais pedido",
     gradient: "from-coco-600/40 to-coco-900/80",
@@ -142,7 +142,7 @@ export const products = [
     id: "agua-coco",
     name: "Água de Coco",
     description:
-      "Na garrafa, geladinha e sem frescura. Hidratante natural — perfeita pro calor de Campinas.",
+      "Na garrafa, geladinha e sem frescura. Hidratante natural, perfeita pro calor de Campinas.",
     image: asset("/products/garrafa-agua-de-coco.webp"),
     tag: "Natural",
     gradient: "from-coco-400/20 to-coco-900/80",
@@ -169,10 +169,30 @@ export const products = [
     featured: false,
   },
   {
+    id: "cocada-artesanal",
+    name: "Cocada Artesanal",
+    description:
+      "Cocada feita na mão, com coco ralado fresco. Textura cremosa e sabor de verdade.",
+    image: asset("/products/cocada-artesanal.jpeg"),
+    tag: "Artesanal",
+    gradient: "from-cream-200/15 to-coco-900/80",
+    featured: false,
+  },
+  {
+    id: "cocada-maracuja",
+    name: "Cocada de Maracujá",
+    description:
+      "Cocada com maracujá, equilíbrio perfeito entre doce e azedinho. Irresistível.",
+    image: asset("/products/cocada-de-maracuja.jpeg"),
+    tag: "Artesanal",
+    gradient: "from-yellow-500/20 to-coco-900/80",
+    featured: false,
+  },
+  {
     id: "oleo-coco",
     name: "Óleo de Coco Copra",
     description:
-      "Prensado a frio, extraído da copra. Na cozinha, no corpo — puro e natural.",
+      "Prensado a frio, extraído da copra. Na cozinha, no corpo, puro e natural.",
     image: asset("/products/oleo-de-coco.webp"),
     tag: "Extra virgem",
     gradient: "from-coco-500/20 to-coco-900/80",
@@ -217,7 +237,7 @@ export const products = [
   {
     id: "pitu",
     name: "Pitú",
-    description: "Cachaça Pitú — marca nordestina de peso. Pra quem revende com qualidade.",
+    description: "Cachaça Pitú, marca nordestina de peso. Pra quem revende com qualidade.",
     image: asset("/products/Pitu.jpeg"),
     tag: "Cachaça",
     gradient: "from-yellow-600/20 to-coco-900/80",
@@ -253,7 +273,7 @@ export const products = [
   {
     id: "vinho-campino",
     name: "Vinho Campino",
-    description: "Vinho Campino — opção versátil pro seu estabelecimento.",
+    description: "Vinho Campino, opção versátil pro seu estabelecimento.",
     image: asset("/products/vinho-campino.jpeg"),
     tag: "Vinho",
     gradient: "from-red-900/30 to-coco-900/80",
@@ -274,7 +294,7 @@ export const contactInfo = {
   location: {
     title: "Nosso depósito",
     description:
-      "Passa aqui em Jardim Eulina — conhece a equipe, experimenta o coco e leva o seu natural.",
+      "Passa aqui em Jardim Eulina, conhece a equipe, experimenta o coco e leva o seu natural.",
     address: brand.address,
     hours: "Seg a Sáb, 8h às 18h",
   },
@@ -282,7 +302,7 @@ export const contactInfo = {
     title: "Entrega na região",
     description:
       "Levamos até bar, restaurante, lanchonete, academia e mercadinho em Campinas e redondezas. Chama no Zap ou no Direct.",
-    address: "Campinas e região — em até 24 horas",
+    address: "Campinas e região, em até 24 horas",
     hours: "Seg a Sex, 7h às 17h",
   },
   phone: brand.phone,

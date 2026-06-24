@@ -119,7 +119,7 @@ export function Catalog() {
               variants={fadeUp}
               className="mx-auto mt-3 max-w-xl px-2 text-sm text-white/65 sm:mt-4 sm:text-base"
             >
-              Do coco gelado à bebida e docinho — linha completa pra revender ou saborear. Chama no Zap ou no Direct.
+              Do coco gelado à bebida e docinho, linha completa pra revender ou saborear. Chama no Zap ou no Direct.
             </motion.p>
           </motion.div>
 
